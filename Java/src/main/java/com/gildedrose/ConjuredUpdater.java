@@ -1,8 +1,8 @@
 package com.gildedrose;
 
-public class Conjured extends MarketItem {
+public class ConjuredUpdater extends DefaultItemUpdater {
 
-    public Conjured(Item item) {
+    public ConjuredUpdater(Item item) {
         super(item);
     }
 

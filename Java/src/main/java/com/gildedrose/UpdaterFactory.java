@@ -1,22 +1,22 @@
 package com.gildedrose;
 
-public class ItemFactory {
+public class UpdaterFactory {
 
     public final static String SULFURAS = "Sulfuras";
     public final static String AGED_BRIE = "Aged Brie";
     public final static String BACKSTAGE_PASSES = "Backstage passes";
     public final static String CONJURED = "Conjured";
 
-    public static MarketItem valueOf(Item item) {
+    public static DefaultItemUpdater of(Item item) {
         if (item.name.startsWith(SULFURAS)) {
-            return new Sulfuras(item);
+            return new SulfurasUpdater(item);
         } else if (item.name.startsWith(AGED_BRIE)) {
-            return new AgedBrie(item);
+            return new AgedBrieUpdater(item);
         } else if (item.name.startsWith(BACKSTAGE_PASSES)) {
-            return new BackstagePasses(item);
+            return new BackstagePassesUpdater(item);
         } else if (item.name.startsWith(CONJURED)) {
-            return new Conjured(item);
+            return new ConjuredUpdater(item);
         } else
-            return new MarketItem(item);
+            return new DefaultItemUpdater(item);
     }
 }

@@ -1,28 +1,28 @@
 package com.gildedrose;
 
-public class BackstagePasses extends MarketItem {
+public class BackstagePassesUpdater extends DefaultItemUpdater {
 
-    public BackstagePasses(Item item) {
+    public BackstagePassesUpdater(Item item) {
         super(item);
     }
 
     @Override
     public void degrade() {
-        sellIn--;
-        quality++;
+        item.sellIn--;
+        item.quality++;
 
         // TODO Does not match stdout.gr!
         // Quality increases by 2 when there are 10 days or less
         // if (sellIn <= 10) {
-        if (sellIn < 10) {
-            quality++;
+        if (item.sellIn < 10) {
+            item.quality++;
         }
         // by 3 when there are 5 days or less
-        if (sellIn < 5) {
-            quality++;
+        if (item.sellIn < 5) {
+            item.quality++;
         }
-        if (sellIn < 0) {
-            quality = 0;
+        if (item.sellIn < 0) {
+            item.quality = 0;
         }
         validateQuality();
     }

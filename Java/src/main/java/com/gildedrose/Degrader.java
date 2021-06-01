@@ -1,5 +1,5 @@
 package com.gildedrose;
 
-public interface Degradable {
+public interface Degrader {
     void degrade();
 }
